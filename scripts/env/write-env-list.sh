@@ -1,15 +1,18 @@
 #INIT PLUTUS ENVS ~/.bashrc - DONT DELETE THIS LINE 
 
-PLUTUS_APPS11=$SOURCE/tools/plutus-apps-1.1.0/plutus-apps
-PLUTUS_APPS12=$SOURCE/tools/plutus-apps-1.2.0/plutus-apps
-PLUTUS_APPSF8=$SOURCE/tools/plutus-apps-f857624598948749c5721c2173c6d7b10a280862/plutus-apps
-#PLUTUS_APPS=$SOURCE/tools/plutus-apps-7cc060361feba3b396cfbdd90f7003b1c6597606/plutus-apps
+# PLUTUS_APPS11=$SOURCE/tools/plutus-apps-1.1.0/plutus-apps
+# PLUTUS_APPS12=$SOURCE/tools/plutus-apps-1.2.0/plutus-apps
+# PLUTUS_APPSF8=$SOURCE/tools/plutus-apps-f857624598948749c5721c2173c6d7b10a280862/plutus-apps
+# #PLUTUS_APPS=$SOURCE/tools/plutus-apps-7cc060361feba3b396cfbdd90f7003b1c6597606/plutus-apps
 
 # declare -A PLUTUS_APPS
 # PLUTUS_APPS["1"]="$PLUTUS_APPS1"
 # PLUTUS_APPS["f8"]="$PLUTUS_APPSF8"
 
-PLUTUS_APPS=$PLUTUS_APPS11
+# Create array of directories
+PLUTUS_APPS_ARR=($(find $PLUTUSAPPS -maxdepth 1 -type d))
+
+PLUTUS_APPS=${PLUTUS_APPS_ARR[0]}
 export PLUTUS_APPS
 
 PLUTUS_APPS_ARR=("$PLUTUS_APPS11" "$PLUTUS_APPS12" "$PLUTUS_APPSF8")

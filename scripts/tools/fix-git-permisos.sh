@@ -3,7 +3,7 @@
 echo "Agregando carperas en safe directories de Git:"
 
 echo " "
-echo "Usuario: "$USUARIO
+echo "Usuario: "$USER
 
 echo " "
 CWD=$(pwd)

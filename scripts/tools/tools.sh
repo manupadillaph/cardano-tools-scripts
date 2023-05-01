@@ -101,7 +101,7 @@ while ! [[ $opcionMenuTools = "0" ]]; do
     fi
 
     if [[ $opcionMenuTools = "31" ]]; then 
-        sudo -su $USUARIO
+        sudo -su $USER
     fi
 
     if [[ $opcionMenuTools = "32" ]]; then 

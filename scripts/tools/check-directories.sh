@@ -137,7 +137,7 @@ for i in ${!verificar_permisos[@]}; do
 
     printf "\n${verificar_permisos_nombres[$i]}: ${verificar_permisos[$i]}\n"
 
-    sudo chown $USUARIO -hR "${verificar_permisos[$i]}"
+    sudo chown $USER -hR "${verificar_permisos[$i]}"
     sudo find "${verificar_permisos[$i]}" -type d -exec chmod 755 {} \;
 done
 

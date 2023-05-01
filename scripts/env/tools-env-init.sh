@@ -10,13 +10,13 @@ export CARDANO_NODE_NETWORK
 CARDANO_NODE_NETWORK_NAME="testnet-preview"
 export CARDANO_NODE_NETWORK_NAME
 
-# USUARIO=plutus
-# export USUARIO
+# USER=plutus
+# export USER
 
 # SOURCE=/home/plutus/source
 # export SOURCE
 
-PLUTUS_DEVS=$SOURCE
+PLUTUS_DEVS=${SOURCE}
 export PLUTUS_DEVS
 
 PLUTUS_DEVS_SCRIPTS=${SCRIPTS}

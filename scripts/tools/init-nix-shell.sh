@@ -13,7 +13,7 @@ if [[ $user = "root" ]]; then
     echo "-----"
     echo '$NIX_SHELL' | xclip
     
-    sudo -su $USUARIO
+    sudo -su $USER
 
 else
 

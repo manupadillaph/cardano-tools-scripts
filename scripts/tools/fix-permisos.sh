@@ -3,7 +3,7 @@
 echo "Arreglando permisos:"
 
 echo " "
-echo "Usuario: "$USUARIO
+echo "Usuario: "$USER
 
 echo " "
 CWD=$(pwd)
@@ -26,7 +26,7 @@ fi
 
 echo "Arreglando permisos de caperta (subcarpetas y archivos): "$carpeta
 
-sudo chown $USUARIO -hR "$carpeta"
+sudo chown $USER -hR "$carpeta"
 sudo find "$carpeta" -type d -exec chmod 755 {} \;
 sudo find "$carpeta" -type f -exec chmod u+w  {} \;
 sudo find "$carpeta" -name "*.sh" -type f -exec chmod +x {} \;

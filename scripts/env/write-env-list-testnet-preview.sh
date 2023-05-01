@@ -6,8 +6,8 @@ export CARDANO_NODE_NETWORK
 CARDANO_NODE_NETWORK_NAME="testnet-preview"
 export CARDANO_NODE_NETWORK_NAME
 
-USUARIO=manuelpadilla
-export USUARIO
+USER=manuelpadilla
+export USER
 
 SOURCE=/home/manuelpadilla/source
 export SOURCE

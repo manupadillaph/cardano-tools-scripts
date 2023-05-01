@@ -1,0 +1,20 @@
+{
+  "cicSlotConfig": {
+    "scSlotLength": 1000,
+    "scSlotZeroTime": 1596059091000
+  },
+  "cicPort": 9083,
+  "cicSecurityParam": 2160,
+  "cicSocketPath": "/home/manuelpadilla/source/tools/cardano-node-1.35.3-linux/db-testnet-preview/node.socket",
+  "cicDbPath": "/home/manuelpadilla/source/tools/cardano-chain-index/testnet-preview/chain-index.db",
+  "cicNetworkId": {
+    "contents": {
+      "unNetworkMagic": 2
+    },
+    "tag": "Testnet"
+  },
+  "cicStoreFrom": {
+    "unBlockNo": 118714
+  },
+  "cicAppendTransactionQueueSize": 1000
+}

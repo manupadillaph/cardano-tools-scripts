@@ -1,0 +1,66 @@
+dbConfig:
+    dbConfigFile: $CARDANO_PAB_DATABASE
+    dbConfigPoolSize: 20
+
+pabWebserverConfig:
+  baseUrl: http://localhost:$CARDANO_PAB_PORT
+  staticDir: plutus-pab-client/dist
+  permissiveCorsPolicy: False
+  # Optional timeout (in seconds) for calls to endpoints that are not currently
+  # available. If this is not set, calls to unavailable endpoints fail
+  # immediately.
+  endpointTimeout: 20
+  enableMarconi: False
+
+walletServerConfig:
+  tag: LocalWalletConfig
+  walletSettings:
+    baseUrl: http://localhost:$CARDANO_WALLET_PORT
+
+nodeServerConfig:
+  pscBaseUrl: http://localhost:$CARDANO_NODE_PORT
+  pscSocketPath: $CARDANO_NODE_SOCKET_PATH
+  pscKeptBlocks: 100
+  pscNetworkId: "$NETWORKMAGIC_NRO" # Testnet network ID (main net = empty string)
+  pscSlotConfig:
+    scSlotZeroTime: 1596059091000 # Wednesday, July 29, 2020 21:44:51 - shelley launch time in milliseconds
+    scSlotLength: 1000 # In milliseconds
+  pscFeeConfig:
+    fcConstantFee:
+      getLovelace: 10 # Constant fee per transaction in lovelace
+    fcScriptsFeeFactor: 1.0 # Factor by which to multiply size-dependent scripts fee in lovelace
+  pscInitialTxWallets: []
+  pscNodeMode: AlonzoNode
+  #pscInitialTxWallets:
+  #  - getWallet: 1
+  #  - getWallet: 2
+  #  - getWallet: 3
+  #pscNodeMode: MockNode
+
+chainIndexConfig:
+  ciBaseUrl: http://localhost:$CARDANO_CHAIN_INDEX_PORT
+
+requestProcessingConfig:
+  requestProcessingInterval: 1
+
+signingProcessConfig:
+  spBaseUrl: http://localhost:9084
+  spWallet:
+    getWallet: 1
+
+metadataServerConfig:
+  mdBaseUrl: http://localhost:9085
+
+developmentOptions:
+  pabRollbackHistory: null
+  pabResumeFrom:
+    #{ "tag" : "PointAtGenesis" }
+    { "tag" : "Point"
+    , "pointBlockId" : "$pointBlockId"
+    , "pointSlot" : { "getSlot" : $pointSlot }
+    }
+
+# Optional EKG Server Config
+# ----
+# monitoringConfig:
+#   monitoringPort: 9090

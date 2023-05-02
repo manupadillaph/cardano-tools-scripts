@@ -17,15 +17,14 @@ for (( i=1; i<=${#nix_files[@]}; i++ )); do
 done
 echo "0: Cancel"
 
+# Prompt the user to select a file
+read -p "Enter the number of the file to use: " selection
+
 if ! [[ $selection =~ ^[0-9]+$ ]] || [ $selection == 0 ]; then
     exit
 fi
 
-# Prompt the user to select a file
-read -p "Enter the number of the file to use: " selection
-
 # Check that the selection is valid
-
 if ! [[ $selection =~ ^[0-9]+$ ]] || [ $selection -lt 1 ] || [ $selection -ge $((${#nix_files[@]}+1)) ]; then
     echo "Invalid selection: $selection"
     exit 1

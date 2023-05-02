@@ -10,7 +10,7 @@
 # PLUTUS_APPS["f8"]="$PLUTUS_APPSF8"
 
 # Create array of directories
-PLUTUS_APPS_ARR=($(find $PLUTUSAPPS -maxdepth 1 -mindepth 1 -type d))
+PLUTUS_APPS_ARR=($(find $PLUTUS_APPS_ROOT -maxdepth 1 -mindepth 1 -type d))
 
 PLUTUS_APPS=${PLUTUS_APPS_ARR[0]}
 export PLUTUS_APPS

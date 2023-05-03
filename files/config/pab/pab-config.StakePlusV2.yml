@@ -1,5 +1,5 @@
 dbConfig:
-    dbConfigFile: /home/manuelpadilla/source/reposUbuntu/CARDANO/cardano-devs-scripts/files/pab/plutus-pab.StakePlusV2.db
+    dbConfigFile: /home/manuelpadilla/source/reposUbuntu/CARDANO/cardano-tools-scripts-v1.0/files/pab/plutus-pab.StakePlusV2.db
     dbConfigPoolSize: 20
 
 pabWebserverConfig:

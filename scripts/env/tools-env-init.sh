@@ -1,7 +1,7 @@
 
 
 # lo uso en docker para configurar acceso a el toolkit de scripts
-# todo este repositorio lo monto en /sources/repos/Plutus-Devs/cardano-devs-scripts/scripts/
+# todo este repositorio lo monto en /sources/reposUbuntu/CARDANO/cardano-tools-scripts-v1.0/scripts/
 # para eso monto la carpera source directamente en el docker-compose.yml
 
 CARDANO_NODE_NETWORK="Testnet"

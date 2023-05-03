@@ -24,9 +24,9 @@ if [[ $opcion = "y" ]]; then
 
 fi
 
-echo "Arreglando permisos de caperta (solo subcarpetas primer nivel): "$carpeta
+echo "Arreglando permisos de caperta (solo subcarpetas 1er y 2do nivel): "$carpeta
 
-find "$carpeta" -maxdepth 1 -type d \( ! -wholename "$carpeta" \) -exec bash -c "echo 'Agregando: {}' && git config --global --add safe.directory {}" \;
+find "$carpeta" -maxdepth 2 -mindepth 1 -type d \( ! -wholename "$carpeta" \) -exec bash -c "echo 'Agregando: {}' && git config --global --add safe.directory {}" \;
 
 #--git config --global --add safe.directory /home/manuelpadilla/source/copyRepos/Falcon-Devs/_OLD/cardano-falcon-stakepol-devs-haskell-v1/dist-newstyle/src/optparse-_-5b3aca9bcb30ab3a
 

@@ -125,7 +125,7 @@ while ! [[ $opcionMenuTools = "0" ]]; do
     fi
 
     if [[ $opcionMenuTools = "7" ]]; then 
-        code "$PLUTUS_DEVS/cardano-devs-scripts"
+        code "$PLUTUS_DEVS/cardano-tools-scripts"
     fi
 
     if [[ $opcionMenuTools = "9" ]]; then 

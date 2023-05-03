@@ -12,7 +12,7 @@ export USER
 SOURCE=/home/manuelpadilla/source
 export SOURCE
 
-PLUTUS_DEVS=$SOURCE/copyRepos/Plutus-Devs
+PLUTUS_DEVS=$SOURCE/reposUbuntu/CARDANO
 export PLUTUS_DEVS
 
 PLUTUS_DEVS_HASKELL=$PLUTUS_DEVS/cardano-devs-plutus

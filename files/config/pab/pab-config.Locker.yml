@@ -1,6 +1,6 @@
 
 dbConfig:
-    dbConfigFile: /home/manuelpadilla/source/copyRepos/Plutus-Devs/cardano-devs-scripts/files/pab/plutus-pab.Locker.db
+    dbConfigFile: /home/manuelpadilla/source/reposUbuntu/CARDANO/cardano-devs-scripts/files/pab/plutus-pab.Locker.db
     dbConfigPoolSize: 20
 
 pabWebserverConfig:

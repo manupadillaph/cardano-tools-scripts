@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Creating Symbolic links for nix-shell"
+CWD=$(pwd)
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+echo ""
+echo "Creating Symbolic links for nix-shell in: ${CWD}"
 echo "It can be used with the Nix Selector plugin for VSCode"
+echo ""
 
 echo "Checking in plutus-apps directory: $PLUTUS_APPS_ROOT"
 

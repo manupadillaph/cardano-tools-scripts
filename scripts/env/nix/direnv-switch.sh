@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+CWD=$(pwd)
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+echo ""
+echo "Creating .envrc file in: ${CWD}"
+echo ""
+
 # Find all files with .nix extension in the current directory
 nix_files=( $(find ${PLUTUS_APPS_ROOT} -maxdepth 2 -mindepth 2 -type f -name "shell.nix" -o -type l -name "shell.nix") )
 
@@ -45,3 +52,5 @@ grep -q 'eval "$(direnv hook bash)"' ~/.bashrc || echo 'eval "$(direnv hook bash
 direnv allow .envrc 
 
 # echo "use with: eval \$NIX"
+
+

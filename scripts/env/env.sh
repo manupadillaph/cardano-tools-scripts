@@ -1,6 +1,8 @@
 #!/bin/bash
 
 CWD=$(pwd)
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 
 opcionMenuEnv=""
 
@@ -44,9 +46,9 @@ while ! [[ $opcionMenuEnv = "0" ]]; do
     echo "--"
 
     echo "34: Activate nix-shell"
-    echo "35: Create-sym-link-nix-shell in folder"
-    echo "36: Delete-sym-links-nix-shell in folder"
-    echo "37: Activate direnv in folder"
+    echo "35: Create-sym-link-nix-shell in ${CWD}"
+    echo "36: Delete-sym-links-nix-shell in ${CWD}"
+    echo "37: Activate direnv in ${CWD}"
 
     echo "--"
 
@@ -97,22 +99,22 @@ while ! [[ $opcionMenuEnv = "0" ]]; do
     fi
 
     if [[ $opcionMenuEnv = "34" ]]; then 
-        bash "$PLUTUS_DEVS_SCRIPTS/env/activate-shell-nix.sh"
+        bash "$PLUTUS_DEVS_SCRIPTS/env/nix/activate-shell-nix.sh"
         echo; read -rsn1 -p "Press any key to continue . . ."; echo
     fi
 
     if [[ $opcionMenuEnv = "35" ]]; then 
-        bash "$PLUTUS_DEVS_SCRIPTS/env/create-sym-link-nix-shell.sh"
+        bash "$PLUTUS_DEVS_SCRIPTS/env/nix/create-sym-link-nix-shell.sh"
         echo; read -rsn1 -p "Press any key to continue . . ."; echo
     fi
 
     if [[ $opcionMenuEnv = "36" ]]; then 
-        bash "$PLUTUS_DEVS_SCRIPTS/env/delete-sym-links-nix-shell.sh"
+        bash "$PLUTUS_DEVS_SCRIPTS/env/nix/delete-sym-links-nix-shell.sh"
         echo; read -rsn1 -p "Press any key to continue . . ."; echo
     fi
 
     if [[ $opcionMenuEnv = "37" ]]; then 
-        bash "$PLUTUS_DEVS_SCRIPTS/env/activate-direnv.sh"
+        bash "$PLUTUS_DEVS_SCRIPTS/env/nix/direnv-switch.sh"
         echo; read -rsn1 -p "Press any key to continue . . ."; echo
     fi
 

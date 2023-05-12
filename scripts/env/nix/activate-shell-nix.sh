@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
+echo ""
 echo "Executing nix-shell"
+echo ""
 echo "Checking in plutus-apps directory: $PLUTUS_APPS_ROOT"
 # Find all files with .nix extension in the current directory
 nix_files=( $(find ${PLUTUS_APPS_ROOT} -maxdepth 2 -mindepth 2 -type f -name "shell.nix" -o -type l -name "shell.nix") )

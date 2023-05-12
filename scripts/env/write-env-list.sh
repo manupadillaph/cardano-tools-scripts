@@ -3,9 +3,8 @@
 if [ -z "${PLUTUS_APPS_ROOT+x}" ]; then
     # VAR_NAME is not defined
     PLUTUS_APPS_ROOT=$SOURCE/tools/plutus-apps
-    export PLUTUS_APPS
+    export PLUTUS_APPS_ROOT
 fi
-
 
 # PLUTUS_APPS11=$SOURCE/tools/plutus-apps-1.1.0/plutus-apps
 # PLUTUS_APPS12=$SOURCE/tools/plutus-apps-1.2.0/plutus-apps

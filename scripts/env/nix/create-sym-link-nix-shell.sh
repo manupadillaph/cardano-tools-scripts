@@ -41,4 +41,21 @@ VERSION=$(echo ${nix_files[$selection-1]} | sed 's/^\(.*\)plutus-apps\/plutus-ap
 rm -f  shell-${VERSION}.nix 
 if test -f ${nix_files[$selection-1]}; then ln -sn ${nix_files[$selection-1]} shell-${VERSION}.nix; fi
 
+
+echo ""
+echo "Do you want to add the Symbolic links to .gitignore? (y/n)"
+read answer
+
+if [[ $answer == [yY] ]]; then
+    echo "Adding the Symbolic links to .gitignore"
+    # find * -maxdepth 1 -type l | while read link; do grep -q "^$link$" .gitignore || echo "$link" >> .gitignore; done
+
+    # find . -type l | sed -e s'/^\.\///g' | while read link; do grep -q "^$link$" .gitignore || echo "$link" >> .gitignore; done
+    # find * -maxdepth 1 -type l | sed -e 's/^\.\///' | while read link; do grep -q "^$link$" .gitignore || echo "$link" >> .gitignore; done
+    # find * -maxdepth 1 -type l | sed -e 's/^\.\///' | while read link; do grep -q "^$link$" .gitignore || echo "$link" >> .gitignore; done
+    find * -maxdepth 1 -type l -exec basename {} \; | while read link; do grep -q "^$link[[:space:]]*$" .gitignore || echo "$link" >> .gitignore; done
+
+    echo "Addded the Symbolic links to .gitignore" 
+fi
+
 echo "Nix symbolic link files created: shell-${VERSION}.nix" 

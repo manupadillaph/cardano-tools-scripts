@@ -12,8 +12,12 @@ while ! [[ $opcionMenuPrincipal = "0" ]]; do
 
     echo "--"
 
-    echo "1: Elegir o Crear Wallet (${walletName})"  
-    echo "2: Elegir o Crear Scipt (${scriptName})"  
+    echo "11: Elegir o Crear Wallet (${walletName})"  
+    echo "12: Elegir o Crear Scipt (${scriptName})"  
+
+    echo "--"
+
+    echo "21: Address Tools"  
 
     echo "--"
 
@@ -76,12 +80,16 @@ while ! [[ $opcionMenuPrincipal = "0" ]]; do
     echo "Opcion: "
     read opcionMenuPrincipal
 
-    if [[ $opcionMenuPrincipal = "1" ]]; then 
+    if [[ $opcionMenuPrincipal = "11" ]]; then 
         source "$PLUTUS_DEVS_SCRIPTS/main/main_elegir_crear_wallet.sh"    
     fi
 
-    if [[ $opcionMenuPrincipal = "2" ]]; then 
+    if [[ $opcionMenuPrincipal = "12" ]]; then 
         source "$PLUTUS_DEVS_SCRIPTS/main/main_elegir_crear_script.sh"
+    fi
+
+    if [[ $opcionMenuPrincipal = "21" ]]; then 
+        source "$PLUTUS_DEVS_SCRIPTS/addresses/getPKHFromAddress.sh"
     fi
 
     if [[ $opcionMenuPrincipal = "31" ]]; then 
